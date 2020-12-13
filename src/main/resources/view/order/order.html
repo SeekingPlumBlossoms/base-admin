@@ -29,46 +29,6 @@
                 </div>
             </div>
             <div class="layui-inline">
-                <label class="layui-form-label">充值账号</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="account" name="account" autocomplete="off" -->
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">商户订单号</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="downOrderId" name="downOrderId" autocomplete="off" -->
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">订单号</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="orderId" name="orderId" autocomplete="off" -->
-                </div>
-            </div>
-
-            <div class="layui-inline" th:if="${userName} eq 'sa' ">
-                <label class="layui-form-label">商户名称</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="downName" name="downName" autocomplete="off" -->
-                </div>
-            </div>
-
-            <div class="layui-inline">
-                <label class="layui-form-label">商品名称</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="productName" name="productName" autocomplete="off" -->
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">购买面值</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="buyValue" name="buyValue" autocomplete="off" -->
-                </div>
-            </div>
-            <div class="layui-inline">
                 <label class="layui-form-label">订单状态</label>
                 <div class="layui-input-block">
                     <select name="orderStatus" id="orderStatus" lay-filter="zhuantai">
@@ -77,6 +37,45 @@
                         <option value="1">失败</option>
                         <option value="2">处理中</option>
                     </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label" >充值账号</label>
+                <div class="layui-input-inline">
+                    <input type="text"  class="layui-input" id="account" name="account" autocomplete="off" -->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">商户订单号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="downOrderId" class="layui-input" name="downOrderId" autocomplete="off" -->
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">订单号</label>
+                <div class="layui-input-inline">
+                    <input type="text"  class="layui-input" id="orderId" name="orderId" autocomplete="off" -->
+                </div>
+            </div>
+
+            <div class="layui-inline" th:if="${userName} eq 'sa' ">
+                <label class="layui-form-label">商户名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="downName" class="layui-input" name="downName" autocomplete="off" -->
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">商品名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="productName" class="layui-input" name="productName" autocomplete="off" -->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">购买面值</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="buyValue" class="layui-input" name="buyValue" autocomplete="off" -->
                 </div>
             </div>
             <input type="hidden" th:value="${userName}" id="userName" name="userName">

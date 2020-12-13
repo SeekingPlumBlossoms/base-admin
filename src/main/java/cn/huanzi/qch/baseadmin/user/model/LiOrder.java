@@ -82,9 +82,10 @@ public class LiOrder {
     /**
      * 下游商户id
      */
-    @Like
+
     private String downId;
 
+    @Like
     private String downName;
 
     public String getDownName() {
