@@ -1,6 +1,7 @@
 package cn.huanzi.qch.baseadmin.user.model;
 
 import cn.huanzi.qch.baseadmin.annotation.Between;
+import cn.huanzi.qch.baseadmin.annotation.Like;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -81,7 +82,18 @@ public class LiOrder {
     /**
      * 下游商户id
      */
+    @Like
     private String downId;
+
+    private String downName;
+
+    public String getDownName() {
+        return downName;
+    }
+
+    public void setDownName(String downName) {
+        this.downName = downName;
+    }
 
     public Long getId() {
         return id;
