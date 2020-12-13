@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 引入公用部分 -->
+    <script th:replace="common/head::static"></script>
+    <!-- 样式 -->
+    <!--    <link th:href="@{/order/css/order.css}" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" th:href="@{/order/css/order.css}" type="text/css">
+</head>
+<body>
+<!-- 树 -->
+<div class="layui-table">
+    <!-- 表格主体 -->
+    <table class="layui-hide" id="orderTable" lay-filter="test"></table>
+    <!-- 模板 -->
+    <script type="text/html" id="liOrderTable">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">订单时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="queryOrderStartTime" id="queryOrderStartTime" placeholder="订单开始时间"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" name="queryOrderEndTime" id="queryOrderEndTime"
+                           placeholder="订单结束时间">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">充值账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="account" name="account" autocomplete="off" -->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">商户订单号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="downOrderId" name="downOrderId" autocomplete="off" -->
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">订单号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="orderId" name="orderId" autocomplete="off" -->
+                </div>
+            </div>
+
+            <div class="layui-inline" th:if="${userName} eq 'sa' ">
+                <label class="layui-form-label">商户名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="downName" name="downName" autocomplete="off" -->
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">商品名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="productName" name="productName" autocomplete="off" -->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">购买面值</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="buyValue" name="buyValue" autocomplete="off" -->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">订单状态</label>
+                <div class="layui-input-block">
+                    <select name="orderStatus" id="orderStatus" lay-filter="zhuantai">
+                        <option value=""></option>
+                        <option value="0">成功</option>
+                        <option value="1">失败</option>
+                        <option value="2">处理中</option>
+                    </select>
+                </div>
+            </div>
+            <input type="hidden" th:value="${userName}" id="userName" name="userName">
+        </div>
+        <button class="layui-btn layui-btn-sm" lay-event="query">查询<i class="layui-icon layui-icon-search"></i>
+        </button>
+    </script>
+</div>
+</body>
+<!-- js -->
+<script th:src="@{/order/js/order.js}"></script>
+</html>
